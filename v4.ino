@@ -59,14 +59,18 @@ void setup() {
 }
 
 void xenonEffect(int channel, int brightness) {
+  // Snabb blinkning
   for (int i = 0; i < 3; i++) {
     ledcWrite(channel, brightness);
-    delay(25);
+    delay(35);
     ledcWrite(channel, 0);
-    delay(55);
+    delay(25);
   }
-  // Behåll ljusstyrkan efter effekten
-  ledcWrite(channel, brightness);
+  // Mjukare övergång till full ljusstyrka
+  for (int i = 0; i <= brightness; i += 2) {
+    ledcWrite(channel, i);
+    delay(15);
+  }
 }
 
 void fadeEffect(int channel, int brightness) {
