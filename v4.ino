@@ -63,7 +63,7 @@ void xenonEffect(int channel, int brightness) {
     ledcWrite(channel, brightness);
     delay(25);
     ledcWrite(channel, 0);
-    delay(25);
+    delay(55);
   }
   // Behåll ljusstyrkan efter effekten
   ledcWrite(channel, brightness);
