@@ -167,13 +167,13 @@ void loop() {
   }
 
   // Hantera LED-strip
-  if (cases[state][5] != lastStripState) {
+  if (cases[state][4] != lastStripState) {
     for (int i = 0; i < NUM_LEDS; i++) { // Loopa genom de första 4 LED-lamporna
-      if (cases[state][5] == 'A') {
+      if (cases[state][4] == 'A') {
         leds[i] = ledColors[i][0]; // Färg för 'A'
-      } else if (cases[state][5] == 'B') {
+      } else if (cases[state][4] == 'B') {
         leds[i] = ledColors[i][1]; // Färg för 'B'
-      } else if (cases[state][5] == 'C') {
+      } else if (cases[state][4] == 'C') {
         leds[i] = ledColors[i][2]; // Färg för 'C'
       } else {
         leds[i] = CRGB::Black;
